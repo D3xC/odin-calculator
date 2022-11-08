@@ -1,7 +1,20 @@
+:root {
+  --background: #2F324C;
+  --button-color: #555B8B;
+  --button-text: #D0D336;
+  --display: #555B8B;
+  --display-text: #D0D336;
+  --borders: #D0D336;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background);
 }
 
 main {
@@ -11,29 +24,58 @@ main {
   display: flex;
   justify-content: center;
 }
+
 .calculator {
-  border: 1px solid black;
+  border: 1px solid var(--borders);
   border-radius: 5px;
   padding: 10px;
-  width: 255px;
+  width: 300px;
 }
 
 .display {
   width: 100%;
   height: 55px;
-  border: 1px solid black;
-  margin-bottom: 10px;
+  border: 1px solid var(--borders);
+  border-radius: 5px;
+  margin-bottom: 7px;
+  background-color: var(--display);
+  color: var(--display-text)
 }
 
-.row {
-  height: 40px;
+.tally {
+  height: 25%;
+  text-align: right;
+  padding-right: 5px;
 }
 
+.result {
+  font-size: 1.75rem;
+  height: 75%;
+  text-align: right;
+  padding: 3px 5px;
+}
+
+.clear-delete {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 45px;
+  grid-gap: 7px;
+  padding-bottom: 7px;
+}
+
+.keys.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 45px 45px 45px 45px;
+  grid-gap: 7px;
+}
 button {
-  height: 30px;
-  width: 55px;
+  border: 1px solid var(--borders);
+  border-radius: 5px;
+  background-color: var(--button-color);
+  color: var(--button-text);
 }
 
-button.clear-delete {
-  width: 114px;
+button:hover {
+  filter: brightness(1.5);
 }
